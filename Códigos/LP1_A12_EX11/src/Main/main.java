@@ -13,18 +13,17 @@ public class main {
 
         //Entrada
         Entrada entrada = new Entrada();
-        String frase = entrada.lerString("Insira uma frase");
-        String[] vogais = {"A", "E", "I", "O", "U"};
-        int[] contador_vogais;//0-A; 1-E; 2-I; 3-O; 4-U
-        
+        String[] data = entrada.lerData("Insira uma data (formato dia/mes/ano)");
+        String mes_extenso;
+        int mes = Integer.valueOf(data[1]);
+
         //Processamento
         Processamento processamento = new Processamento();
-        contador_vogais = processamento.contaVogais(frase);
-        
+        mes_extenso = processamento.encontraMes(mes);
+
         //Saida
         Saida saida = new Saida();
-        saida.imprimirVetorInteiro("Quantia de letras na frase: ", contador_vogais, vogais);
-        
+        saida.imprimirMensagem("O mês " + mes + " escrito por extenso fica: " + mes_extenso);
     }
-
+    
 }

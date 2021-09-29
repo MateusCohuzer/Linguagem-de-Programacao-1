@@ -236,4 +236,13 @@ class Processamento {
         }
         return ocorrencias;
     }
+
+    int[] encontraIndex(String frase, String palavra) {
+        frase = frase.toLowerCase();
+        palavra = palavra.toLowerCase();
+        int[] index = {0, 0}; //0-Start && 1-End
+        index[0] = frase.indexOf(palavra);
+        index[1] = frase.indexOf(palavra) + palavra.length();
+        return index;
+    }
 }

@@ -17,6 +17,10 @@ class Saida {
         System.out.println(mensagem + ":" + decimalFormat.format(n_double));
     }
 
+    public void imprimirMensagem(String mensagem){
+        System.out.println(mensagem);
+    }
+    
     void imprimirVetorInteiro(String mensagem, int[] contador, String[] universo_resposta) {
         System.out.println(mensagem);
         try {

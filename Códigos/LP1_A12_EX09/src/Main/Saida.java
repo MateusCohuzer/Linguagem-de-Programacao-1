@@ -17,8 +17,14 @@ class Saida {
         System.out.println(mensagem + ":" + decimalFormat.format(n_double));
     }
 
-    public void imprimirMensagem(String mensagem) {
+    void imprimirVetorInteiro(String mensagem, int[] contador, String[] universo_resposta) {
         System.out.println(mensagem);
+        try {
+            for (int i = 0; i < contador.length; i++) {
+                System.out.println(universo_resposta[i] + " --> " + contador[i]);
+            }
+        } catch (Exception e) {
+            System.out.println("Erro detectado: " + e);
+        }
     }
-
 }

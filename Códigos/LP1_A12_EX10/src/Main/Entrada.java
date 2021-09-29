@@ -47,7 +47,6 @@ class Entrada {
             s = teclado.nextLine();
             s = s.trim();
             if (!s.equals("")) {
-
                 break;
             } else {
                 System.out.println("Digite uma string não vazia");
@@ -55,6 +54,28 @@ class Entrada {
         }
         return s;
     }
+
+    public String lerStringEmString(String mensagem, String frase_original) {
+        String s = "";
+        String aux1 = frase_original.toLowerCase();
+        while (true) {
+            System.out.print(mensagem + ": ");
+            s = teclado.nextLine();
+            s = s.trim();
+            String aux0 = s.toLowerCase();
+            if (!s.equals("")) {
+                if (aux1.contains(aux0)) {
+                    break;
+                } else {
+                    System.out.println("Insira uma palavra existente na frase!");
+                }
+            } else {
+                System.out.println("Digite uma string não vazia");
+            }
+        }
+        return s;
+    }
+
     public char lerChar(String mensagem) {
         char retorno;
         char aux = " ".charAt(0);

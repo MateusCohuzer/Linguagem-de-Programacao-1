@@ -193,4 +193,33 @@ class Processamento {
         }
         return retorno;
     }
+
+    int[] contaVogais(String frase) {
+        frase = frase.toLowerCase();
+        String[] frase_separada = frase.split("");
+        int[] contador_vogais = {0, 0, 0, 0, 0};
+        String[] vogais = {"a", "á", "à", "â", "ã",
+            "e", "é", "è", "ê",
+            "i", "í", "ì", "î",
+            "o", "ó", "ò", "ô", "õ",
+            "u", "ú", "ù", "û"};
+        for (int i = 0; i < frase_separada.length; i++) {
+            for (int j = 0; j < vogais.length; j++) {
+                if (frase_separada[i].equals(vogais[j])) {
+                    if (j <= 4) {
+                        contador_vogais[0]++;
+                    } else if (j <= 8) {
+                        contador_vogais[1]++;
+                    } else if (j <= 12) {
+                        contador_vogais[2]++;
+                    } else if (j <= 17) {
+                        contador_vogais[3]++;
+                    } else {
+                        contador_vogais[4]++;
+                    }
+                }
+            }
+        }
+        return contador_vogais;
+    }
 }

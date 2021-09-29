@@ -14,16 +14,17 @@ public class main {
         //Entrada
         Entrada entrada = new Entrada();
         String frase = entrada.lerString("Insira uma frase");
-        String[] vogais = {"A", "E", "I", "O", "U"};
-        int[] contador_vogais;//0-A; 1-E; 2-I; 3-O; 4-U
+        String palavra = entrada.lerStringEmString("Insira uma palavra da frase digitada anteriormente", frase);
+        int[] index;
+        String[] universo_resposta = {"Inicio da palavra na frase na posição", "Fim da palavra na frase na posição"};
         
         //Processamento
         Processamento processamento = new Processamento();
-        contador_vogais = processamento.contaVogais(frase);
+        index = processamento.encontraIndex(frase, palavra);
         
         //Saida
         Saida saida = new Saida();
-        saida.imprimirVetorInteiro("Quantia de letras na frase: ", contador_vogais, vogais);
+        saida.imprimirVetorInteiro("Os indices da palavra na frase são:", index, universo_resposta);
         
     }
 
